@@ -22,6 +22,11 @@ h1,h2,h3,h4,h5,h6{
             position: absolute;
             top: 85px;
         }
+        .date:hover{
+            animation-duration: 3s;
+            animation-name: rubberBand
+;
+        }
 
         .weather-display-container{
             // height: 150px;
