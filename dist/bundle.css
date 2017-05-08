@@ -1,0 +1,152 @@
+.slide_out {
+  min-height: calc(100vh - 70px);
+  width: 100%;
+  background: #333;
+  position: absolute;
+  right: 100%;
+  transition: 0.5s ease-in-out; }
+
+.open {
+  right: 0%; }
+
+.mobile_list_nav {
+  display: flex;
+  padding-top: 22px;
+  flex-direction: column;
+  justify-content: space-around;
+  /*height:60vh;*/
+  align-items: center;
+  color: #858585; }
+
+.mobile_list_nav li {
+  width: 100%;
+  border-bottom: 1px solid #ccc;
+  text-align: center;
+  padding: 34px; }
+
+/* 
+html5doctor.com Reset Stylesheet
+v1.6.1
+Last Updated: 2010-09-17
+Author: Richard Clark - http://richclarkdesign.com 
+Twitter: @rich_clark
+*/
+html, body, div, span, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+abbr, address, cite, code,
+del, dfn, em, img, ins, kbd, q, samp,
+small, strong, sub, sup, var,
+b, i,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section, summary,
+time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  outline: 0;
+  font-size: 100%;
+  vertical-align: baseline;
+  background: transparent; }
+
+body {
+  line-height: 1; }
+
+article, aside, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section {
+  display: block; }
+
+nav ul {
+  list-style: none; }
+
+blockquote, q {
+  quotes: none; }
+
+blockquote:before, blockquote:after,
+q:before, q:after {
+  content: '';
+  content: none; }
+
+a {
+  margin: 0;
+  padding: 0;
+  font-size: 100%;
+  vertical-align: baseline;
+  background: transparent; }
+
+/* change colours to suit your needs */
+ins {
+  background-color: #ff9;
+  color: #000;
+  text-decoration: none; }
+
+/* change colours to suit your needs */
+mark {
+  background-color: #ff9;
+  color: #000;
+  font-style: italic;
+  font-weight: bold; }
+
+del {
+  text-decoration: line-through; }
+
+abbr[title], dfn[title] {
+  border-bottom: 1px dotted;
+  cursor: help; }
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0; }
+
+/* change border colour to suit your needs */
+hr {
+  display: block;
+  height: 1px;
+  border: 0;
+  border-top: 1px solid #cccccc;
+  margin: 1em 0;
+  padding: 0; }
+
+input, select {
+  vertical-align: middle; }
+
+*, *:before, *:after {
+  box-sizing: border-box; }
+
+@import url("https://fonts.googleapis.com/css?family=Poppins:400,500");
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'Poppins', serif;
+  font-weight: 500;
+  color: white;
+  font-size: 50px; }
+
+.weather-wrapper {
+  display: flex;
+  justify-content: center; }
+  .weather-wrapper .wallpaper {
+    height: 100vh;
+    width: 100%;
+    background-size: cover; }
+  .weather-wrapper .date {
+    position: absolute;
+    top: 85px; }
+  .weather-wrapper .weather-display-container {
+    width: 150px;
+    position: absolute;
+    margin-top: 405px;
+    background-size: cover;
+    z-index: 10; }
+  .weather-wrapper .weather-container {
+    height: 500px;
+    width: 700px;
+    background: rgba(0, 0, 0, 0.4);
+    position: absolute;
+    margin-top: 250px;
+    z-index: 1; }
+    .weather-wrapper .weather-container .text-container {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      margin-top: 40px; }
