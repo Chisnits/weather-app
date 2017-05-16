@@ -8,6 +8,7 @@ angular.module('weatherApp').service('weatherService', function($http){
             method: 'GET',
             url: baseUrl + "weather?" + "mode=json&units=imperial&" + "lat=" + lat + "&lon=" + lon + "&appid=" + apiKey
     }).then(function(response){
+        // console.log(response.data)
         if(response.status === 200){
             return response.data
         }
@@ -41,5 +42,22 @@ angular.module('weatherApp').service('weatherService', function($http){
         })
     }
 
-
+//                                     //
+//                5-DAY                //
+//                                     //
+    var fiveDayBase="http://api.openweathermap.org/data/2.5/forecast?"
+    var fiveDayKey="2eb41514978692779797c3e8f93cb385"
+    this.getFiveDayForecast = function(lat,lon){
+        // console.log(lat, lon);
+        return $http({
+            method: 'GET',
+            url: fiveDayBase + "mode=json&units=imperial&lat=" + lat + "&lon=" + lon  + "&appid=" + fiveDayKey
+    }).then(function(response){
+        console.log(response.data);
+        if(response.status === 200){
+            return response.data
+        }
+            return "Something Went Wrong"
+        })
+    }
 });

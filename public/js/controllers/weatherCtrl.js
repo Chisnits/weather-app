@@ -2,6 +2,11 @@ angular.module('weatherApp').controller('weatherCtrl', function($scope, weatherS
     $scope.pictures = pic.url;
     $scope.lat = location.lat;
     $scope.lon = location.lon;
+    var date = new Date()
+    var format = 'LLLL'
+    var results = moment(date).format(format);
+    console.log(results)
+    $scope.results = results;
 
     $scope.currentTime = moment().format('LT');
 
@@ -34,12 +39,18 @@ weatherService.getCurrentLocation().then(function(location){
         $scope.minTemp = Math.round(minTemp);
     })
 
-    var date = new Date()
-    var format = 'LLLL'
-    var results = moment(date).format(format);
-    console.log(results)
-    $scope.results = results;
+    weatherService.getFiveDayForecast($scope.lat, $scope.lon).then(function(fiveDayWeather){
+        $scope.fiveDayWeather = fiveDayWeather;
+        console.log(fiveDayWeather);
+    })
+
+    
 
 
 });
+
+//                                     //
+//                5-DAY                //
+//                                     //
+
 });

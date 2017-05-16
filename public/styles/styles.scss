@@ -1,57 +1,96 @@
 @import url('https://fonts.googleapis.com/css?family=Poppins:400,500');
-
-h1,h2,h3,h4,h5,h6{
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
     font-family: 'Poppins', serif;
     font-weight: 500;
     color: white;
     font-size: 50px;
-
 }
 
-.weather-wrapper{
+.weather-wrapper {
     display: flex;
     justify-content: center;
-
-        .wallpaper{
-            height: 100vh;
-            width: 100%;
-            background-size: cover;
-            
+    .wallpaper {
+        height: 100vh;
+        width: 100%;
+        background-size: cover;
+    }
+    .date {
+        position: absolute;
+        top: 85px;
+    }
+    .date:hover {
+        animation-duration: 3s;
+        animation-name: rubberBand;
+    }
+    .weather-display-container {
+        // height: 150px;
+        width: 150px;
+        position: absolute;
+        margin-top: 405px;
+        background-size: cover;
+        z-index: 10;
+    }
+    .weather-container {
+        height: 500px;
+        width: 700px; // background-color: black;
+        // opacity: 0.5;
+        background: rgba(0, 0, 0, 0.4);
+        position: absolute;
+        margin-top: 250px;
+        z-index: 1;
+        .text-container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin-top: 40px;
         }
-        .date{
-            position: absolute;
-            top: 85px;
-        }
-        .date:hover{
-            animation-duration: 3s;
-            animation-name: rubberBand
-;
-        }
-
-        .weather-display-container{
-            // height: 150px;
-            width: 150px;
-            position: absolute;
-            margin-top: 405px;
-            background-size: cover;
-            z-index: 10;
-            
-        }
-        .weather-container{
-            height: 500px;
-            width: 700px;
-            // background-color: black;
-            // opacity: 0.5;
-            background: rgba(0, 0, 0, 0.4);
-            position: absolute;
-            margin-top: 250px;
-            z-index: 1;
-                .text-container{
-                    display: flex;
-                    flex-direction: column;
-                    align-items: center;
-                    margin-top: 40px;
-                }
-        }
+    }
 }
+
+.clock-container{
+    position: absolute;
+    z-index: 12;
+    top: 250px;
+    left: 50px;
+    
+
+.clock {
+    width: 20rem;
+    height: 20rem;
+    border: 20px solid white;
+    border-radius: 50%;
+    margin: 50px auto;
+    position: absolute;
+    padding: 2rem;
+    box-shadow: 0 0 0 4px rgba(0, 0, 0, 0.1), inset 0 0 0 3px #EFEFEF, inset 0 0 10px black, 0 0 10px rgba(0, 0, 0, 0.2);
+
+    .clock-face {
+        position: relative;
+        width: 100%;
+        height: 100%;
+        left: -20px;
+        transform: translateY(-3px);
+        /* account for the height of the clock hands */
+        .hand {
+            width: 55%;
+            height: 6px;
+            background: white;
+            position: absolute;
+            top: 50%;
+            left: -20;
+            transform-origin: 100%;
+            transform: rotate(90deg);
+            transition: all 0.05s;
+            transition-timing-function: cubic-bezier(0.1, 2.7, 0.58, 1);
+        }
+    }
+    
+}
+}
+
 
