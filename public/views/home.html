@@ -1,7 +1,9 @@
 <section class="weather-wrapper">
     <img ng-src="{{pictures}}" alt="wallaper" class="wallpaper">
+    <clock-directive style="z-index:12;"></clock-directive>
         
         <h1 class="date">{{results}}</h1>
+    <five-day-directive style="z-index:12"></five-day-directive>
         <div class="weather-display-container">
              <img style="width:150px"ng-src="{{weatherIcon}}">
         </div>

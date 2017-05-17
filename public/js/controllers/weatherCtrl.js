@@ -39,18 +39,34 @@ weatherService.getCurrentLocation().then(function(location){
         $scope.minTemp = Math.round(minTemp);
     })
 
+//                                     //
+//                5-DAY                //
+//                                     //
+
     weatherService.getFiveDayForecast($scope.lat, $scope.lon).then(function(fiveDayWeather){
         $scope.fiveDayWeather = fiveDayWeather;
         console.log(fiveDayWeather);
+        
+        // var weatherObj = weather.weather.pop()
+        // var currentWeather = weatherObj.main;
+        // $scope.currentWeather = currentWeather;
+        // var iconBaseUrl = 'http://openweathermap.org/img/w/'
+        // var weatherIcon = weatherObj.icon;
+        // $scope.weatherIcon = iconBaseUrl + weatherIcon + ".png"
+        // console.log($scope.weatherIcon)
+        
+        // var currentTemp = weather.main.temp;
+        // $scope.currentTemp = Math.round(currentTemp);
+
+        // var maxTemp = weather.main.temp_max;
+        // $scope.maxTemp = Math.round(maxTemp);
+
+        // var minTemp = weather.main.temp_min;
+        // $scope.minTemp = Math.round(minTemp);
     })
 
     
 
 
-});
-
-//                                     //
-//                5-DAY                //
-//                                     //
-
+    });
 });

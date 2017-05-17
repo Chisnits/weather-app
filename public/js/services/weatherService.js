@@ -52,7 +52,7 @@ angular.module('weatherApp').service('weatherService', function($http){
         return $http({
             method: 'GET',
             url: fiveDayBase + "mode=json&units=imperial&lat=" + lat + "&lon=" + lon  + "&appid=" + fiveDayKey
-    }).then(function(response){
+    }).then(function(response){``
         console.log(response.data);
         if(response.status === 200){
             return response.data

@@ -85,20 +85,36 @@ weatherService.getCurrentLocation().then(function(location){
         $scope.minTemp = Math.round(minTemp);
     })
 
+//                                     //
+//                5-DAY                //
+//                                     //
+
     weatherService.getFiveDayForecast($scope.lat, $scope.lon).then(function(fiveDayWeather){
         $scope.fiveDayWeather = fiveDayWeather;
         console.log(fiveDayWeather);
+        
+        // var weatherObj = weather.weather.pop()
+        // var currentWeather = weatherObj.main;
+        // $scope.currentWeather = currentWeather;
+        // var iconBaseUrl = 'http://openweathermap.org/img/w/'
+        // var weatherIcon = weatherObj.icon;
+        // $scope.weatherIcon = iconBaseUrl + weatherIcon + ".png"
+        // console.log($scope.weatherIcon)
+        
+        // var currentTemp = weather.main.temp;
+        // $scope.currentTemp = Math.round(currentTemp);
+
+        // var maxTemp = weather.main.temp_max;
+        // $scope.maxTemp = Math.round(maxTemp);
+
+        // var minTemp = weather.main.temp_min;
+        // $scope.minTemp = Math.round(minTemp);
     })
 
     
 
 
-});
-
-//                                     //
-//                5-DAY                //
-//                                     //
-
+    });
 }]);
 angular.module('weatherApp').directive('clockDirective', function(){
 
@@ -110,6 +126,14 @@ angular.module('weatherApp').directive('clockDirective', function(){
 
 
 })
+angular.module('weatherApp').directive('fiveDayDirective', function(){
+       return{
+        restrict: 'E',
+        templateUrl: './views/directives/fiveTmpl.html',
+        controller: 'clockCtrl'
+    }
+
+});
 angular.module('weatherApp').service('weatherService', ["$http", function($http){
     
     var baseUrl = "http://api.openweathermap.org/data/2.5/"
@@ -164,7 +188,7 @@ angular.module('weatherApp').service('weatherService', ["$http", function($http)
         return $http({
             method: 'GET',
             url: fiveDayBase + "mode=json&units=imperial&lat=" + lat + "&lon=" + lon  + "&appid=" + fiveDayKey
-    }).then(function(response){
+    }).then(function(response){``
         console.log(response.data);
         if(response.status === 200){
             return response.data
